@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ionic-angular-1909299": {
+    "ionic-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ionic-angular-1-fm045",
+            "outputPath": "dist/ionic-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,10 +29,15 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
               }
             ],
             "styles": [
-              "src/estilos.css",
+              "src/styles.css",
               {
                 "input": "node_modules/@ionic/angular/css/core.css"
               },
@@ -106,10 +111,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ionic-angular-1909299:build:production"
+              "browserTarget": "ionic-angular:build:production"
             },
             "development": {
-              "browserTarget": "ionic-angular-1909299:build:development"
+              "browserTarget": "ionic-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -117,7 +122,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ionic-angular-1909299:build"
+            "browserTarget": "ionic-angular:build"
           }
         },
         "test": {
@@ -134,10 +139,15 @@
                 "glob": "**/*.svg",
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
               }
             ],
             "styles": [
-              "src/estilos.css"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -145,29 +155,29 @@
         "ionic-cordova-serve": {
           "builder": "@ionic/angular-toolkit:cordova-serve",
           "options": {
-            "cordovaBuildTarget": "ionic-angular-1909299:ionic-cordova-build",
-            "devServerTarget": "ionic-angular-1909299:serve"
+            "cordovaBuildTarget": "ionic-angular:ionic-cordova-build",
+            "devServerTarget": "ionic-angular:serve"
           },
           "configurations": {
             "production": {
-              "cordovaBuildTarget": "ionic-angular-1909299:ionic-cordova-build:production",
-              "devServerTarget": "ionic-angular-1909299:serve:production"
+              "cordovaBuildTarget": "ionic-angular:ionic-cordova-build:production",
+              "devServerTarget": "ionic-angular:serve:production"
             }
           }
         },
         "ionic-cordova-build": {
           "builder": "@ionic/angular-toolkit:cordova-build",
           "options": {
-            "browserTarget": "ionic-angular-1909299:build"
+            "browserTarget": "ionic-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ionic-angular-1909299:build:production"
+              "browserTarget": "ionic-angular:build:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ionic-angular-1909299"
+  "defaultProject": "ionic-angular"
 }
