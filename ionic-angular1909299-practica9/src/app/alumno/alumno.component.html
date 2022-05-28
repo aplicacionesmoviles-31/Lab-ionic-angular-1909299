@@ -1,0 +1,53 @@
+<ion-content>
+
+    <ion-grid>
+        <ion-row id="registroAlumno">
+            <ion-col size="12">
+                <ion-label>Nombre: </ion-label>
+                <ion-input id="nombre" placeholder="Ejemplo: Hugo" [(ngModel)]="nombreAlumno"></ion-input>
+            </ion-col>
+            <ion-col size="12">
+                <ion-label>Apellido: </ion-label>
+                <ion-input id="apellido" placeholder="Ejemplo: Meza" [(ngModel)]="apellidoAlumno"></ion-input>
+            </ion-col>
+            <ion-col size="12">
+                <ion-label>Matrícula: </ion-label>
+                <ion-input id="matricula" placeholder="Ejemplo: 1909299" [(ngModel)]="matriculaAlumno" ></ion-input>
+            </ion-col>
+            <ion-col>
+                <ion-button (click)="agregarAlumno()">Agregar Alumno</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-button routerLink="/alumno">Ver listado alumnos</ion-button>
+
+    <ion-card *ngFor="let alumno of alumnos">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col sizeXs="4">
+                                <p>Nombre: <strong>{{alumno.nombre}}</strong></p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col sizeXs="4">
+                                <p>Apellido: <strong>{{alumno.apellido}}</strong></p>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col sizeXs="4">
+                                <p>Matricula: <strong>{{alumno.matricula}}</strong></p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-col>
+                <ion-col class="logo">
+                    <img src="/assets/img/PildoraRoja.png" width="150px">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-content>
